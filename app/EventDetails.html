@@ -51,12 +51,19 @@
             </div>
             <hr/>
             <h3>Sessions</h3>
+
             <div ng-repeat="session in event.sessions">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{session.name}}</h3>
                     </div>
                     <div class="panel-body">
+                        <div>
+                            <span class="badge" ng-model="session.upvoteCount">{{session.upvoteCount}}</span>
+                            <button class="glyphicon glyphicon-thumbs-up" ng-click="upvote(session)"></button>
+                            <button class="glyphicon glyphicon-thumbs-down" ng-click="downvote(session)"></button>
+                            <span class="glyphicon glyphicon-flag" ng-hide="session.upvoteCount < 5"></span>
+                        </div>
                         <span>{{session.description}}</span><br/>
                         <span class="label label-success">{{session.author}}</span>
                         <span class="label label-info">{{session.duration}}</span>
