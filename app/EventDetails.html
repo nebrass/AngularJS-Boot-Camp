@@ -22,14 +22,18 @@
         <div class="navbar navbar-default">
             <ul class="nav">
                 <div class="navbar-brand">
-                    <span style="font-size:18px;">AngularJS Boot Camp - Nebrass</span>
+                    <a href="http://nebrass.github.io/AngularJS-Boot-Camp/">
+                        <span style="font-size:18px;">AngularJS Boot Camp - Nebrass</span>
+                    </a>
                 </div>
             </ul>
         </div>
         <div ng-controller="EventController">
             <div class="container-fluid">
-                <img ng-src="{{event.img}}" alt="{{event.name}}">
-
+                <div class="text-center">
+                    <img ng-src="{{event.img}}" alt="{{event.name}}">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="https://angularjs.org/img/AngularJS-large.png" alt="AngularJS Logo">
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <h2>{{event.name}}</h2>

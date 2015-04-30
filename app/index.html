@@ -1,46 +1,75 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!doctype html>
+<html ng-app="eventsApp">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  <link rel="stylesheet" href=bower_components/bootstrap/dist/css/bootstrap.min.css/>
+    <meta charset="utf-8">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="app.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<div class="container">
+    <br/>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <div class="jumbotron">
+        <div class="navbar navbar-default">
+            <ul class="nav">
+                <div class="navbar-brand">
+                    <a href="http://nebrass.github.io/AngularJS-Boot-Camp/">
+                        <span style="font-size:18px;">AngularJS Boot Camp - Nebrass</span>
+                    </a>
+                </div>
+            </ul>
+        </div>
+        <div ng-controller="EventController">
+            <div class="container-fluid">
+                <img ng-src="{{event.img}}" alt="{{event.name}}">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="https://angularjs.org/img/AngularJS-large.png" alt="AngularJS Logo">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="http://bower.io/img/bower-logo.png" alt="Bower Logo" style="width: 25%;">
+                <br/>
+                <img src="http://media.arexworks.com/tf/am_skis/img/css3_html5_jquery_bootstrap.png" alt="HTML5 Logo" style="width: 30%;">
+                &nbsp;&nbsp;
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2000px-Node.js_logo.svg.png" alt="Node JS" style="width: 20%;">
+                <img src="https://www.npmjs.com/static/images/npm-logo.svg" alt="NPM Logo" style="width: 15%;">
+                &nbsp;&nbsp;
+                <img src="http://mohsen.alimomeni.org/static/github.png" alt="Github Logo" style="width: 10%;">
+                &nbsp;&nbsp;
+                <img src="http://upload.wikimedia.org/wikipedia/en/3/3a/OpenShift-LogoType.svg" style="width: 15%;">
+            </div>
+            <br />
+            <p>
+                This project is a boot camp project for <a href="https://angularjs.org/">AngularJS Framework</a>. This project is made to learn <a href="https://angularjs.org/">AngularJS</a> basics.<br/>
+                Elaborated by <span class="glyphicon glyphicon-fire"></span> <a href="http://fr.linkedin.com/in/nebrass">Nebrass Lamouchi</a> <span class="glyphicon glyphicon-fire"></span> <br/>
+                <p class="text-center">Thursday 30th, April 2015 - Asnières sur Seine 92600 - FRANCE</p>
+            </p>
+        </div>
+    </div>
+</div>
 
-  <div ng-view></div>
+<footer class="well">
+    <div class="container">
+        <div class="row-fluid" id="bottom-info">
+            <!--div class="span6 pagination-centered" id="social"-->
+            <div class="span8" id="copyright">
+                <span style="font-size:12px;" class="publishDate">
+                    Project elaborated by Nebrass Lamouchi - Last Published: April 30th, 2015
+                </span>
+            </div>
+        </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
-  <h1>Hello World</h1>
+        <div class="row"></div>
+    </div>
+</footer>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"/>
+<script src="app.js"></script>
+<script src="js/Controllers/EventController.js"></script>
 </body>
 </html>
