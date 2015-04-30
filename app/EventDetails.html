@@ -1,0 +1,88 @@
+<!doctype html>
+<html ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="app.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <br/>
+
+    <div class="jumbotron">
+        <div class="navbar navbar-default">
+            <ul class="nav">
+                <div class="navbar-brand">
+                    <span style="font-size:18px;">AngularJS Boot Camp - Nebrass</span>
+                </div>
+            </ul>
+        </div>
+        <div ng-controller="EventController">
+            <div class="container-fluid">
+                <img ng-src="{{event.img}}" alt="{{event.name}}">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>{{event.name}}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div><strong>Date: {{event.date}}</strong></div>
+                        <div><strong>Time: {{event.time}}</strong></div>
+                    </div>
+                    <div class="col-md-3">
+                        <address>
+                            <strong>Address:</strong><br/>
+                            {{event.location.address}}<br/>
+                            {{event.location.city}}, {{event.location.province}}
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <h3>Sessions</h3>
+            <div ng-repeat="session in event.sessions">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{session.name}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <span>{{session.description}}</span><br/>
+                        <span class="label label-success">{{session.author}}</span>
+                        <span class="label label-info">{{session.duration}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="well">
+    <div class="container">
+        <div class="row-fluid" id="bottom-info">
+            <!--div class="span6 pagination-centered" id="social"-->
+            <div class="span8" id="copyright">
+                <span style="font-size:12px;" class="publishDate">
+                    Project elaborated by Nebrass Lamouchi - Last Published: April 30th, 2015
+                </span>
+            </div>
+        </div>
+
+        <div class="row"></div>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="js/Controllers/EventController.js"></script>
+</body>
+</html>
