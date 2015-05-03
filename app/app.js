@@ -1,4 +1,4 @@
 'use strict';
 
-var application = angular.module('eventsApp', []);
+var application = angular.module('eventsApp', ['ngSanitize']);
 
